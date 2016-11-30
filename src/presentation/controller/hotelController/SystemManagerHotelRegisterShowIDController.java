@@ -16,6 +16,8 @@ public class SystemManagerHotelRegisterShowIDController {
 	@FXML
 	private Label HotelStaffID;
 	@FXML
+	private Label HotelStaffPassword;
+	@FXML
 	private Button back;
 	
 	public SystemManagerHotelRegisterShowIDController(){	
