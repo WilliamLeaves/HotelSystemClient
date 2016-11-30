@@ -1,6 +1,7 @@
 package presentation.controller.userManagementController;
 
 import VO.SystemStaffVO;
+import VO.UserVO;
 import blservice.UserInfo_blservice;
 import blservice.impl.UserInfo_bl;
 import javafx.fxml.FXML;
