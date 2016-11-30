@@ -20,9 +20,9 @@
                   <Label fx:id="leftMenuNameLabel" layoutX="95.0" layoutY="210.0" text="Label" />
                   <Label layoutX="33.0" layoutY="240.0" text="身份" />
                   <Label layoutX="95.0" layoutY="240.0" text="客户" />
-                  <Button layoutX="10.0" layoutY="290.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="200.0" text="修改个人信息" />
-                  <Button layoutX="11.0" layoutY="340.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="200.0" text="更改密码" />
-                  <Button layoutX="11.0" layoutY="390.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="200.0" text="注册会员" />
+                  <Button fx:id="modifyPersonalInfo" layoutX="10.0" layoutY="290.0" mnemonicParsing="false" onAction="#handleCustomerInfoModify" prefHeight="39.0" prefWidth="200.0" text="修改个人信息" />
+                  <Button fx:id="modifyPassword" layoutX="11.0" layoutY="340.0" mnemonicParsing="false" onAction="#handleCustomerPasswordModify" prefHeight="39.0" prefWidth="200.0" text="更改密码" />
+                  <Button fx:id="modifyMember" layoutX="11.0" layoutY="390.0" mnemonicParsing="false" onAction="#handleCustomerMemberModify" prefHeight="39.0" prefWidth="200.0" text="注册会员" />
                   <Button layoutX="11.0" layoutY="545.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="200.0" text="返回" />
                </children>
             </AnchorPane>

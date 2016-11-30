@@ -6,17 +6,16 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="378.0" prefWidth="477.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<AnchorPane prefHeight="378.0" prefWidth="477.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.controller.registerController.RegisterController">
    <children>
       <Text layoutX="34.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="新用户注册">
          <font>
             <Font name="Microsoft YaHei" size="24.0" />
          </font>
       </Text>
-      <TextField layoutX="111.0" layoutY="109.0" prefHeight="23.0" prefWidth="192.0" />
-      <PasswordField layoutX="112.0" layoutY="142.0" prefHeight="23.0" prefWidth="192.0" />
-      <PasswordField layoutX="111.0" layoutY="178.0" prefHeight="23.0" prefWidth="192.0">
+      <TextField fx:id="name" layoutX="111.0" layoutY="109.0" prefHeight="23.0" prefWidth="192.0" />
+      <PasswordField fx:id="password" layoutX="112.0" layoutY="142.0" prefHeight="23.0" prefWidth="192.0" />
+      <PasswordField fx:id="confirmPassword" layoutX="111.0" layoutY="178.0" prefHeight="23.0" prefWidth="192.0">
          <contextMenu>
             <ContextMenu>
               <items>
@@ -50,9 +49,9 @@
             <Font name="Microsoft YaHei" size="12.0" />
          </font>
       </Label>
-      <DatePicker layoutX="111.0" layoutY="250.0" prefHeight="23.0" prefWidth="192.0" />
+      <DatePicker fx:id="birthday" layoutX="111.0" layoutY="250.0" prefHeight="23.0" prefWidth="192.0" />
       <Text layoutX="325.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2~10位中英文字符" />
-      <MenuButton layoutX="111.0" layoutY="216.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="192.0" text="MenuButton">
+      <MenuButton fx:id="setDistrict" layoutX="111.0" layoutY="216.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="192.0" text="MenuButton">
         <items>
           <MenuItem mnemonicParsing="false" text="Action 1" />
           <MenuItem mnemonicParsing="false" text="Action 2" />
@@ -60,7 +59,7 @@
       </MenuButton>
       <Text layoutX="325.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="8~14位英文、符号或数字" />
       <Text layoutX="60.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="标记为*的为必填项" />
-      <Button layoutX="164.0" layoutY="324.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="54.0" text="确认" />
-      <Button layoutX="249.0" layoutY="324.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="54.0" text="取消" />
+      <Button fx:id="confirm" layoutX="164.0" layoutY="324.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="54.0" text="确认" />
+      <Button fx:id="cancel" layoutX="249.0" layoutY="324.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="54.0" text="取消" />
    </children>
 </AnchorPane>

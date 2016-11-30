@@ -1,14 +1,27 @@
 package presentation.controller.loginController;
 
-import presentation.view.login_ui.LoginControllerService;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import main.Main;
 
-public class LoginController implements LoginControllerService {
+public class LoginController {
 
-	public Boolean comfirm(String user_id, String user_password) {
-		if (user_id == "15105199359" && user_password == "qwer123")
-			return true;
-		else
-			return false;
+	@FXML
+	private TextField userId;
+	@FXML
+	private PasswordField userPassword;
+	@FXML
+	private Button login;
+	@FXML
+	private Button register;
+
+	public LoginController() {
+		
 	}
 
+	public void LoginShow(Main mainScene) {
+
+	}
 }

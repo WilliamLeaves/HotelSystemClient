@@ -1,4 +1,4 @@
-package VO;
+ackage VO;
 
 public class CustemorInfoChangeVO {
 

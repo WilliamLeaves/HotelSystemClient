@@ -44,8 +44,11 @@ public class CustomerInfoModifyController {
 		blservice = new UserInfo_bl();
 	}
 
-	public void initialize(Main mainScene) {
-		this.CustomerinfoShow(mainScene);
+	public void initialize(Main mainScene, CustomerVO customer) {
+		this.mainScene = mainScene;
+		this.customer = customer;
+		this.CustomerinfoShow(this.mainScene);
+
 	}
 
 	private void getCustomerModifyFromScene() {
@@ -53,16 +56,16 @@ public class CustomerInfoModifyController {
 	}
 
 	private void getCustomerInfo(String id) {
-		this.customer=this.blservice.getCustomerInfo(id);
+		this.customer = this.blservice.getCustomerInfo(id);
 	}
 
 	public ResultMessage CustomerinfoShow(Main mainScene) {
-		this.mainScene = mainScene;
-		getCustomerInfo("123456");
 		this.leftIdLabel.setText(this.customer.getId());
 		this.leftNameLabel.setText(this.customer.getUsername());
 		this.idLabel.setText(this.customer.getId());
 		this.creditLabel.setText(String.valueOf(this.customer.getCredit()));
+		this.nameTextField.setText(this.customer.getUsername());
+		this.companyTextField.setText(this.customer.getCompanyName());
 		if (customer.getMemberState() == memberState.NON_MEMBER) {
 			this.memberLabel.setText("非会员");
 		} else if (customer.getMemberState() == memberState.NORMAL_MEMBER) {
@@ -72,9 +75,20 @@ public class CustomerInfoModifyController {
 		}
 		return ResultMessage.SUCCESSFUL;
 	}
-	public ResultMessage CustomerInfoModify(){
-		String newName=this.nameTextField.getText();
-		//Date newbirthday=this.datePicker
-		return ResultMessage.SUCCESSFUL;
+
+	public void handleBack() {
+		this.mainScene.showCustomerInfoScene(customer);
+	}
+
+	public void handleSave() {
+		if (this.nameTextField.getText() != "") {
+			this.customer.setUsername(this.nameTextField.getText());
+		}
+		if (this.companyTextField.getText() != "") {
+			this.customer.setCompanyName(this.companyTextField.getText());
+		}
+		//调用Bl层的方法对数据库进行修改
+		//this.blservice.CustomerinfoModify(Customer, VO);
+		this.mainScene.showCustomerInfoScene(customer);
 	}
 }

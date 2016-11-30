@@ -3,15 +3,19 @@ package VO;
 import PO.SystemStaffPO;
 
 public class SystemStaffVO {
-	
+
 	private String id;
 
 	private String username;
-	
+
 	private String businessDistrict;
+	private String password;
 
 	public SystemStaffVO() {
-		super();
+		this.id = "300001";
+		this.username = "Bill";
+		this.businessDistrict = "ÐÂ½Ö¿ÚÉÌÈ¦";
+		this.password = "bill300001";
 	}
 
 	public SystemStaffVO(SystemStaffPO userPO) {
@@ -44,5 +48,5 @@ public class SystemStaffVO {
 	public void setBusinessDistrict(String businessDistrict) {
 		this.businessDistrict = businessDistrict;
 	}
-	
+
 }

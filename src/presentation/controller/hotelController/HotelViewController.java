@@ -1,56 +1,53 @@
 package presentation.controller.hotelController;
 
-import java.util.ArrayList;
-
+import VO.CustomerVO;
 import VO.HotelInfoVO;
-import blservice.Hotel_blservice;
-import other.ResultMessage;
-import other.SortMethod;
-import presentation.view.hotel_ui.HotelViewControllerService;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import main.Main;
 
-public class HotelViewController implements HotelViewControllerService{
-	Hotel_blservice hotelService;
+public class HotelViewController {
+	@FXML
+	private ImageView myPicture;
+	@FXML
+	private Label leftIdLabel;
+	@FXML
+	private Label leftNameLabel;
+	@FXML
+	private Button viewHotelInfo;
+	@FXML
+	private Button guess;
+	@FXML
+	private Button back;
+	@FXML
+	private TextField searchInput;
+	@FXML
+	private Button searchButton;
+	@FXML
+	private TableView<HotelInfoVO> hotelTable;
+	@FXML
+	private TableColumn<HotelInfoVO, String> hotelId;
+	@FXML
+	private TableColumn<HotelInfoVO, String> address;
+	@FXML
+	private TableColumn<HotelInfoVO, String> description;
 
-	public HotelInfoVO getHotelInfo(String hotelId) {
-		HotelInfoVO vo = new HotelInfoVO(
-				this.hotelService.getHotelInfo(hotelId));
-		return vo;
-	}
-
-	public ResultMessage showHotelInfo(HotelInfoVO HotelInfo) {
-		return ResultMessage.SUCCESSFUL;
-	}
-
-	public String[] getListOfHotelId() {
-		return this.hotelService.getListOfHotelId();
-
-	}
-
-	public ArrayList<HotelInfoVO> getListOfHotel(String[] hotelId) {
-		String[] hotelIdList = this.getListOfHotelId();
-		ArrayList<HotelInfoVO> voList = new ArrayList<HotelInfoVO>();
-		voList.add(new HotelInfoVO(this.hotelService
-				.getHotelInfo(hotelIdList[0])));
-		return voList;
-	}
-
-	public ResultMessage showHotelList(ArrayList<HotelInfoVO> list) {
-		return ResultMessage.SUCCESSFUL;
-
-	}
-
-	public ArrayList<HotelInfoVO> HotelListSort(SortMethod method,
-			ArrayList<HotelInfoVO> list) {
-		return list;
+	public HotelViewController() {
 
 	}
 
-	public String[] getListOfHotelPrefer(String userId) {
-		return this.hotelService.getListOfHotelPrefer(userId);
+	public void HotelViewShow(Main mainScene) {
+
 	}
 
-	public ResultMessage bookRoom(String hotelID) {
-		
-		return ResultMessage.SUCCESSFUL;
+	public void initialize(Main main, CustomerVO customer, HotelInfoVO hotel) {
+		// TODO Auto-generated method stub
+
 	}
+
 }

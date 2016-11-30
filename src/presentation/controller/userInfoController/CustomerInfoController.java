@@ -19,6 +19,8 @@ public class CustomerInfoController {
 	@FXML
 	private Button modifyPassword;
 	@FXML
+	private Button modifyMember;
+	@FXML
 	private Button backTOSuper;
 	@FXML
 	private Label idLabel;
@@ -52,13 +54,10 @@ public class CustomerInfoController {
 		blservice = new UserInfo_bl();
 	}
 
-	public void initialize() {
-
-	}
-
-	// 暂时用不到的方法
-	private void getCustomer(String id) {
-		this.Customer = blservice.getCustomerInfo(id);
+	public void initialize(Main mainscene, CustomerVO customer) {
+		this.mainsence = mainscene;
+		this.Customer = customer;
+		this.CustomerinfoShow(this.mainsence);
 	}
 
 	public ResultMessage getCustomerinfoModify(CustomerVO Customer) {
@@ -66,8 +65,6 @@ public class CustomerInfoController {
 	}
 
 	public ResultMessage CustomerinfoShow(Main mainScene) {
-		this.getCustomer("123456");
-		this.mainsence = mainScene;
 		this.idLabel.setText(Customer.getId());
 		this.nameLabel.setText(Customer.getUsername());
 		this.birthdayLabel.setText(Customer.getBirthday().toString());
@@ -88,4 +85,14 @@ public class CustomerInfoController {
 		return ResultMessage.SUCCESSFUL;
 	}
 
+	public void handleCustomerInfoModify() {
+		this.mainsence.showCustomerModifyScene(this.Customer);
+	}
+
+	public void handleCustomerPasswordModify() {
+		this.mainsence.showCustomerPasswordModifyScene(this.Customer);
+	}
+	public void handleCustomerMemberModify(){
+		this.mainsence.showCustomerMemberModifyScene(this.Customer);
+	}
 }
