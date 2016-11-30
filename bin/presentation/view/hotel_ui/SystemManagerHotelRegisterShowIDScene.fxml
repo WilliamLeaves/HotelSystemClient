@@ -62,7 +62,7 @@
                </font>
             </Label>
             <Label text="酒店工作人员初始密码" GridPane.rowIndex="4" />
-            <Label fx:id="HotelStaffID1" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <Label fx:id="HotelStaffPassword" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <font>
                   <Font size="14.0" />
                </font>
